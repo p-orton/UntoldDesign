@@ -1,0 +1,212 @@
+/* Defaults */
+body {
+  /* Always show scroll bar to avoid glitch effect on page load */
+  overflow-y: scroll;
+}
+
+*{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+hr{
+  border-color: black;
+  text-align: left;
+  margin-left: 0;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+img{
+    padding-bottom: 5px;
+    margin: 0 10px 0 10px;
+}
+
+.bwWrapper {
+	position:relative;
+	display:block;
+}
+
+h3{
+  padding-top: 0px;
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+h1{
+  padding-top: 0px;
+  margin-top: 0px;
+  font-size: 70px;
+}
+
+form{
+    margin-top: 15px;
+}
+
+/* End Defaults */
+/*#logoImg{
+  display: none;
+}*/
+
+#logoDiv{
+  min-height: 270px;
+}
+
+.hrQuarter{
+  width: 25%;
+}
+
+.footerLogo{
+  max-height: 30px;
+  float: right;
+}
+
+.img-responsive {
+  /* centers responsive images */
+    margin: 0 auto;
+}
+
+.headerLogo{
+    /*positions logo in header*/
+    margin-top: 100px;
+    margin-bottom: 60px;
+    height: 110px;
+}
+
+.subHeaderText{
+  margin-top: -10px;
+}
+
+
+/* NAVBAR */
+/**********/
+
+/* Button defaults, including the transition settings */
+.menuButton, .nextButton{
+  font-size: 18px;
+  text-align: left;
+  text-decoration: none;
+  color: #777;
+  min-width: 50px;
+}
+
+.nextButton:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.nextButtonContainer{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media(min-width:768px){
+  .menuButton, .nextButton{
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+  }
+}
+
+/* override bootstrap deafult layout */
+.navbar-default .navbar-nav > li > a {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding-top: 0px;
+}
+
+/* override bootstrap default layout */
+.nav>li>a {
+    padding-left: 0;
+}
+
+@media(min-width:768px){
+  /* Animates the button hover so the text slides right and darkens*/
+  .menuButton:hover{
+    color: black;
+    padding-left: 30px;
+  }
+
+  /* Styles the select nav button */
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
+      padding-left: 30px;
+  }
+}
+
+/* Background and borders from the nav */
+.navbar-default {
+    background-color: white;
+    border-color: white;
+}
+
+/* Styles the select nav button */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: black;
+    background-color: white;
+}
+
+
+/***END NAVBAR****/
+/*****************/
+
+.footerRow{
+    margin-top: 50px;
+    padding-top: 50px;
+    letter-spacing: -2px;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+}
+
+.portfolioItemContainer:hover .zoomGlyph{
+  display: block;
+}
+
+.portfolioItemContainer{
+  float:right;
+  position: relative;
+  padding-left: 20px;
+}
+
+.zoomGlyph{
+  position: absolute;
+  display: none;
+  left: 30px;
+  top: 10px;
+  z-index: 100;
+}
+
+#loadingDiv{
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /*margin-left: 200px;*/
+}
+
+.typed-cursor{
+    display:none;
+}
+
+.navbar-toggle{
+
+}
+
+.navbar-header{
+  /*position:fixed;
+  top: 10px;
+  right: 15px;*/
+  /*z-index: 1000;*/
+}
+
+/* TEMP borders for layouts
+.col-sm-10{
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+*/

@@ -1,0 +1,25 @@
+.storyMain{
+  padding-right: 80px;
+  margin-bottom: 40px;
+}
+
+.col-story-process{
+  /*padding-right: 60px;*/
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 720px){
+  .storyMain{
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .col-story-process{
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.col-story-number{
+  padding-left: 15px;
+}

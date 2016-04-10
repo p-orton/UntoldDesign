@@ -1,0 +1,29 @@
+
+
+.col-story-process{
+  margin-bottom: 40px;
+  font-size: 16px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+@media(min-width:768px){
+  .col-story-process{
+    padding-right: 15px;
+    padding-left: 0;
+  }
+}
+
+@media(min-width:992px){
+  .col-story-process{
+    padding-right: 60px;
+    padding-left: 0px;
+  }
+}
+
+/*
+.col-story-number{
+  padding-left: 15px;
+}
+*/
