@@ -34,17 +34,17 @@ echo '
 ';
 echoActiveClassIfRequestMatches("index");
 echo '
-        ><a id="btnWorks" class="menuButton" href="/index.php"></a></li></br>
+        ><a id="btnWorks" class="menuButton btnNavigation" href="/index.php"></a></li></br>
         <li
 ';
 echoActiveClassIfRequestMatches("story");
 echo '
-        ><a id="btnAbout" class="menuButton" href="/story.php"></a></li></br>
+        ><a id="btnAbout" class="menuButton btnNavigation" href="/story.php"></a></li></br>
         <li
 ';
 echoActiveClassIfRequestMatches("contact");
 echo '
-        ><a id="btnContact" class="menuButton" href="/contact.php"></a></li>
+        ><a id="btnContact" class="menuButton btnNavigation" href="/contact.php"></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>

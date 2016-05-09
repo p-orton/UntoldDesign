@@ -1,5 +1,8 @@
-<?php echo '</div></div>
+</div>
+</div>
 <div class="footerRow">
   <h3>f i n .</h3>
-</div></body></html>
-'; ?>
+</div>
+</body>
+</html>
+

@@ -3,7 +3,8 @@
 <html lang="en-US">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paul Orton Portfolio</title>
+  <title>Untold Design</title>
+  <link rel="icon" href="/images/Tabby.ico">
   <link href="https://fonts.googleapis.com/css?family=Raleway:500italic,500" rel="stylesheet">
   <script src="/scripts/header.js"></script>
 
@@ -20,9 +21,13 @@
 <body>
   <div class="container">
     <div id="loadingDiv">
-      <h3 id="loadingText"></h3>
+      <p id="loadingText"></p>
     </div>
+  </div>
+
+  <div class="container" id="mainContainer">
     <div id="logoDiv" class="row">
+        <!--<a href="/index.php"><img class="headerLogo img-responsive" src="images/logo.jpg" alt="Logo"></a>-->
         <a href="/index.php"><img class="headerLogo img-responsive" src="images/logo.jpg" alt="Logo"></a>
     </div>
     <br/>

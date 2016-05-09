@@ -5,6 +5,8 @@ $action=$_REQUEST['action'];
   if ($action=="")    /* display the contact form */
       {
 ?>
+
+  <!--<script src="scripts/form_validation.js"></script>-->
   <div class="row">
     <div class="span3">
       <h3>pull up a chair, let's chat</h3>
@@ -14,6 +16,7 @@ $action=$_REQUEST['action'];
   </div>
   <div class="row">
     <div class="col-sm-10 Offset2">
+
       <form role="form" id="contact-form" method="POST" action="" enctype="multipart/form-data">
         <input type="hidden" name="action" value="submit">
         <div class="form-group control-group">
@@ -30,15 +33,19 @@ $action=$_REQUEST['action'];
         </div>
         <input type="submit" class="btn btn-default" value="send it"></input>
       </form>
+
     </div>
   </div>
+
 <?php
-      }else                /* send the submitted data */
+      }
+  else                /* send the submitted data */
       {
         $in_name=$_REQUEST['name'];
         $in_email=$_REQUEST['email'];
         $in_message=$_REQUEST['message'];
         $in_subject=$_REQUEST['subject'];
+
         if (($in_name=="")||($in_email=="")||($in_message=="")||($in_subject==""))
             {
             echo "All fields are required, please fill <a href=\"\">the form</a> again.";
@@ -51,4 +58,6 @@ $action=$_REQUEST['action'];
             }
       }
 ?>
+
+
 <?php include 'footer.php'; ?>

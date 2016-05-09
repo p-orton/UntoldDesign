@@ -80,6 +80,7 @@
      margin-top: 20px;
      margin-bottom: 20px;
      max-height: 110px;
+     min-height: 110px;
      margin: 0 auto;
  }
   @media(min-width:768px){
@@ -205,10 +206,12 @@
  }
 
  #loadingDiv{
+   display:none;
    position:fixed;
    left: 50%;
    top: 50%;
    transform: translate(-50%, -50%);
+   font-size: 70px;
  }
 
  .typed-cursor{

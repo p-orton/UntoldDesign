@@ -26,10 +26,8 @@
 
     $('.itemContainer').hover(function(){
       $(this).children('.titleDiv').slideDown();
-      //$('.titleDiv').slideDown();
     },
     function(){
-      //$('.titleDiv').slideUp();
       $(this).children('.titleDiv').slideUp();
     });
   });
@@ -60,7 +58,7 @@
               echo '    <p>' . $row['WORK_TITLE'] . '</br>' . $row['WORK_TYPE'] . '</p>';
               echo '  </div>';
               echo '  <div class="wrapper">';
-              echo '  <a class="bwWrapper" href="portfolioItem.php?id=' . $row["WORK_ID"] . '">';
+              echo '  <a class="bwWrapper btnNavigation" href="portfolioItem.php?id=' . $row["WORK_ID"] . '">';
               echo "    <img class='img-responsive BWFilter' src='" . $row["IMAGE_PATH"] . "'>";
               echo '  </a>';
               echo '  </div>';

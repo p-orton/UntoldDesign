@@ -88,7 +88,7 @@
     <hr>
     <p><? echo $description ?></p>
     <div class="nextButtonContainer">
-      <? echo '<a class="nextButton" href="portfolioItem.php?id=' . $nextID . '"> >> next chapter</a>' ?>
+      <? echo '<a class="nextButton btnNavigation" href="portfolioItem.php?id=' . $nextID . '"> >> next chapter</a>' ?>
     </div>
   </div>
   <div class="col-sm-9">
