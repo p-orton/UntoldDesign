@@ -54,8 +54,9 @@
       if ($result->num_rows > 0) {
           while($row = $result->fetch_assoc()) {
               echo '<div class="itemContainer">';
-              echo '  <div class="titleDiv">';
-              echo '    <p>' . $row['WORK_TITLE'] . '</br>' . $row['WORK_TYPE'] . '</p>';
+              echo '  <div class="titleDiv btnNavigation">';
+              echo '    <a class="btnNavigation hoverTitleLink" href="portfolioItem.php?id=' . $row["WORK_ID"] . '">';
+              echo '    <p>' . $row['WORK_TITLE'] . '</br>' . $row['WORK_TYPE'] . '</p>  </a>';
               echo '  </div>';
               echo '  <div class="wrapper">';
               echo '  <a class="bwWrapper btnNavigation" href="portfolioItem.php?id=' . $row["WORK_ID"] . '">';

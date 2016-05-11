@@ -69,7 +69,11 @@ $(document).ready(function() {
 
   $('.btnNavigation').click(function(event){
     event.preventDefault();
-    redirect(this.href);
+    if(this.tagName == "DIV"){
+      redirect($(this).find("a").attr("href"));
+    } else {
+      redirect(this.href);
+    }
   });
 });
 

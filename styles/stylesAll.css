@@ -238,3 +238,18 @@
    /* For IE 8*/
    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
  }
+
+ .hoverTitleLink{
+     text-decoration: none;
+     color: black;
+ }
+
+.hoverTitleLink:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.hoverTitleLink:active{
+    text-decoration: none;
+    color: black;
+}
