@@ -1,9 +1,5 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
 
-<script src="/scripts/ekko-lightbox.min.js"></script>
-<script src="/scripts/lightbox.js"></script>
-<link rel="stylesheet" type="text/css" href="/styles/ekko-lightbox.min.css">
-
 <?php
 
   require "dataAccess.php";
@@ -69,6 +65,16 @@
   $imagesHTML = "";
 
   if ($result->num_rows > 0) {
+    if(strtolower($project) == "infographic"){
+      while($row = $result->fetch_assoc()) {
+        $img = $row["IMAGE_PATH"];
+        //$thumb = $row["THUMB_PATH"];
+        $imagesHTML .= ' <div class="portfolioItemContainer">';
+        $imagesHTML .= '  <img class="img-responsive" src="' . $img . '">';
+        //$imagesHTML .= '  <span class="glyphicon glyphicon-zoom-in zoomGlyph"></span>';
+        $imagesHTML .= ' </div>';
+      }
+    } else {
       while($row = $result->fetch_assoc()) {
         $img = $row["IMAGE_PATH"];
         $thumb = $row["THUMB_PATH"];
@@ -77,23 +83,29 @@
         $imagesHTML .= '  <span class="glyphicon glyphicon-zoom-in zoomGlyph"></span>';
         $imagesHTML .= ' </div>';
       }
+    }
   }
-?>
 
-<div class="row">
-  <div class="col-sm-3">
-    <h3><? echo $title ?><br/>
-      <small><? echo $project ?></small>
-    </h3>
-    <hr>
-    <p><? echo $description ?></p>
-    <div class="nextButtonContainer">
-      <? echo '<a class="nextButton btnNavigation" href="portfolioItem.php?id=' . $nextID . '"> >> next chapter</a>' ?>
-    </div>
-  </div>
-  <div class="col-sm-9">
-    <?php   echo $imagesHTML; ?>
-  </div>
-</div>
+  if(strtolower($project) == "infographic"){
+    echo '<div class="row"><div class="col-sm-12">';
+    echo '<h3>' . $title . '<br/>';
+    echo '<small>' . $project . '</small></h3>';
+    echo '<hr><p>' . $description . '</p>';
+    echo '<div class="nextButtonContainer">';
+    echo '<a class="nextButton btnNavigation" href="portfolioItem.php?id=' . $nextID . '"> >> next chapter</a>';
+    echo '</div></div></div>';
+    echo '<div class="row"><div class="col-sm-12">' . $imagesHTML . '</div></div>';
+  } else {
+    echo '<div class="row"><div class="col-sm-3">';
+    echo '<h3>' . $title . '<br/>';
+    echo '<small>' . $project . '</small></h3>';
+    echo '<hr><p>' . $description . '</p>';
+    echo '<div class="nextButtonContainer">';
+    echo '<a class="nextButton btnNavigation" href="portfolioItem.php?id=' . $nextID . '"> >> next chapter</a>';
+    echo '</div></div>';
+    echo '<div class="col-sm-9">' . $imagesHTML . '</div></div>';
+  }
+
+?>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>

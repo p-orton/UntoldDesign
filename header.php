@@ -1,23 +1,18 @@
 
 <!DOCTYPE html>
 <html lang="en-US">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Untold Design</title>
   <link rel="icon" href="/images/Tabby.ico">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:500italic,500" rel="stylesheet">
-  <script src="/scripts/header.js"></script>
-
-  <!--
-  <script src="/scripts/jquery-1.12.1.min.js"></script>
-  <script src="/scripts/bootstrap.min.js"></script>
-  <script src="/scripts/jquery.BlackAndWhite.js"></script>
-  <script src="/scripts/typed.js"></script>-->
-
-  <link rel="stylesheet" type="text/css" href="/styles/stylesAll.css">
-  <!--<link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/styles/styles.css">-->
-
+  <script>
+    //Hides content while loading so it can fade in on completion
+    if(document.getElementById){
+      document.write('<style type="text/css" media="screen">.hiddenOnLoad{display:none;}</style>');
+    }
+  </script>
+</head>
 <body>
   <div class="container">
     <div id="loadingDiv">
@@ -25,7 +20,7 @@
     </div>
   </div>
 
-  <div class="container" id="mainContainer">
+  <div class="container hiddenOnLoad" id="mainContainer">
     <div id="logoDiv" class="row">
         <!--<a href="/index.php"><img class="headerLogo img-responsive" src="images/logo.jpg" alt="Logo"></a>-->
         <a href="/index.php"><img class="headerLogo img-responsive" src="images/logo.jpg" alt="Logo"></a>

@@ -253,3 +253,7 @@
     text-decoration: none;
     color: black;
 }
+
+.hiddenWhileLoading #mainContent{
+    display:none;
+}
