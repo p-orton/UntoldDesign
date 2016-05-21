@@ -24,7 +24,7 @@
 
       //Print a column, and each image as a link to the detail page
       //Include WORK_ID in the URL for the item detail page
-      echo '<div class="col-sm-4">';
+      echo '<div class="col-sm-4 indexColumn">';
       if ($result->num_rows > 0) {
           while($row = $result->fetch_assoc()) {
               echo '<div class="itemContainer">';

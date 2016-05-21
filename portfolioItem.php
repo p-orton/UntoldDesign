@@ -30,23 +30,39 @@
 
   $ids = array();
   $counter = 0;
-  $cur = 0;
-  $nextID = 1;
+  $currentInd = 0; //Position of the currently selected ID in the array
+  $nextID = 1; //Position of the next ID in the array
+  $prevID = 0; //Position of the previous ID in the array
   if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
         $tempID = $row["WORK_ID"];
         if($tempID == $id){
-          $cur = $counter;
+          $currentInd = $counter;
         }
         $ids[$counter] = $row["WORK_ID"];
         $counter++;
       }
   }
 
-  if($cur != ($counter - 1)){
-    $cur++;
-    $nextID = $ids[$cur];
+  //Set ID of next portfolio item
+  if($currentInd != ($counter - 1)){
+    $tempInd = $currentInd;
+    $tempInd++;
+    $nextID = $ids[$tempInd];
+  } else {
+    $nextID = $ids[0];
   }
+
+//Set ID of previous portfolio item
+  if($currentInd == 0){
+    $prevID = $ids[count($ids) - 1];
+  } else {
+    $tempInd = $currentInd;
+    $tempInd--;
+    $prevID = $ids[$tempInd];
+  }
+
+
 
   $sql = "SELECT image.IMAGE_PATH, thumb.IMAGE_PATH AS THUMB_PATH FROM
           (SELECT WORK_IMAGE.REC_ID, IMAGE.IMAGE_PATH
@@ -65,47 +81,42 @@
   $imagesHTML = "";
 
   if ($result->num_rows > 0) {
-    if(strtolower($project) == "infographic"){
-      while($row = $result->fetch_assoc()) {
-        $img = $row["IMAGE_PATH"];
-        //$thumb = $row["THUMB_PATH"];
-        $imagesHTML .= ' <div class="portfolioItemContainer">';
-        $imagesHTML .= '  <img class="img-responsive" src="' . $img . '">';
-        //$imagesHTML .= '  <span class="glyphicon glyphicon-zoom-in zoomGlyph"></span>';
-        $imagesHTML .= ' </div>';
-      }
-    } else {
-      while($row = $result->fetch_assoc()) {
-        $img = $row["IMAGE_PATH"];
-        $thumb = $row["THUMB_PATH"];
-        $imagesHTML .= ' <div class="portfolioItemContainer">';
-        $imagesHTML .= '  <a href="' . $img . '" data-toggle="lightbox" data-gallery="portfolioImages"><img class="img-responsive" src="' . $thumb . '"></a>';
-        $imagesHTML .= '  <span class="glyphicon glyphicon-zoom-in zoomGlyph"></span>';
-        $imagesHTML .= ' </div>';
-      }
+    while($row = $result->fetch_assoc()) {
+      $img = $row["IMAGE_PATH"];
+      $thumb = $row["THUMB_PATH"];
+      $imagesHTML .= ' <div class="portfolioItemContainer">';
+      $imagesHTML .= '<img class="img-responsive img-portfolioItem" src="' . $img . '">';
+      $imagesHTML .= ' </div>';
     }
   }
 
-  if(strtolower($project) == "infographic"){
-    echo '<div class="row"><div class="col-sm-12">';
-    echo '<h3>' . $title . '<br/>';
-    echo '<small>' . $project . '</small></h3>';
-    echo '<hr><p>' . $description . '</p>';
-    echo '<div class="nextButtonContainer">';
-    echo '<a class="nextButton btnNavigation" href="portfolioItem.php?id=' . $nextID . '"> >> next chapter</a>';
-    echo '</div></div></div>';
-    echo '<div class="row"><div class="col-sm-12">' . $imagesHTML . '</div></div>';
-  } else {
-    echo '<div class="row"><div class="col-sm-3">';
-    echo '<h3>' . $title . '<br/>';
-    echo '<small>' . $project . '</small></h3>';
-    echo '<hr><p>' . $description . '</p>';
-    echo '<div class="nextButtonContainer">';
-    echo '<a class="nextButton btnNavigation" href="portfolioItem.php?id=' . $nextID . '"> >> next chapter</a>';
-    echo '</div></div>';
-    echo '<div class="col-sm-9">' . $imagesHTML . '</div></div>';
-  }
-
 ?>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <h3><?php echo $title; ?>
+        <!--<small><?php echo $project;?></small>-->
+      </h3>
+    </div>
+    <div class="col-sm-9 leftPadding">
+      <p><?php echo $description; ?></p>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 scrollContainer">
+        <div class="nextPrevContainer">
+          <div class="prevButtonContainer">
+            <?php echo '<a class="nextButton btnNavigation" href="portfolioItem.php?id=' . $prevID . '"> previous chapter <<</a>'; ?>
+          </div>
+          <div class="nextButtonContainer">
+            <?php echo '<a class="nextButton btnNavigation" href="portfolioItem.php?id=' . $nextID . '"> >> next chapter</a>'; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 imagesContainer">
+        <?php echo $imagesHTML; ?>
+      </div>
+    </div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>

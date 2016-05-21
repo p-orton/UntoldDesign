@@ -30,17 +30,17 @@ echo '
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
-        <li
+        <li class="fullWidth"
 ';
 echoActiveClassIfRequestMatches("index");
 echo '
         ><a id="btnWorks" class="menuButton btnNavigation" href="/index.php"></a></li></br>
-        <li
+        <li class="fullWidth"
 ';
 echoActiveClassIfRequestMatches("story");
 echo '
         ><a id="btnAbout" class="menuButton btnNavigation" href="/story.php"></a></li></br>
-        <li
+        <li class="fullWidth"
 ';
 echoActiveClassIfRequestMatches("contact");
 echo '
